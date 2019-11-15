@@ -5,14 +5,29 @@
     margin-top: 50px;
 }
 
+.pagsecundaria {
+    font-size: 20px;
+    background: url(../imagenes/fondo.jpg) top center;
+    background-attachment: fixed;
+}
+
 .titulo .parrafotitulo .parrafo h2 {
     margin-top: 60px;
-    color: black;
+    color: yellowgreen;
+}
+
+h2 {
+    color: yellowgreen;
+}
+
+p {
+    color: #fff;
 }
 
 .tituloimagen img {
     height: 350px;
     margin-top: 20px;
+    color: #fff;
 }
 
 .textoparrafotitulo {
