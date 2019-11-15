@@ -1,0 +1,129 @@
+{% extends "drugs/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<body class="pagprincipal">
+    <header>
+        <div class="Contenedor">
+            <h1 class="icon-search">Wikidrugs</h1>
+            <input type="Checkbox" id="menu-bar">
+            <label class="icon-th-list" for="menu-bar"></label>
+            <nav class="menu">
+                <a href="#Sentido">Drogas</a>
+                <a href="#social">Contactos</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <section id="Banner">
+            <div class="slider">
+                <ul>
+                    <li><img src="{% static 'imagenes/marihuana.jpg' %}" alt="" height="400"></li>
+                    <li><img src="{% static 'imagenes/6.jpg' %}" height="400"></li>
+                    <li><img src="{% static 'imagenes/5.jpg' %}" height="400"></li>
+                    <li><img src="{% static 'imagenes/9.jpg '%}" height="400"></li>
+                    <li><img src="{% static 'imagenes/10.jpg'%}" height="400"></li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section id="Sentido">
+            <h2>El sentido de Wikidrugs</h2>
+            <p>
+                La principal idea de wikidrugs es que la gente tenga el conocimiento de lo que le ocurrira al ocupar cada uno de estos estimulantes , ya sea desde psicoactivos hasta pscodelicos , con el fin de que si llega el momento de hacerlo lo hagan con responsabilidad.
+            </p>
+        </section>
+
+        <section class="row Drogas1" id="Drogas1">
+            <div class=" imagenmarihuana col-xs-12 col-md-4">
+                <div class="box imgmarihuana"></div>
+                <a href="{% url 'infomarihuana' %}">
+                    <img src="{% static 'imagenes/marihuanaimg.jpg'%}">
+                    <h2> Marihuana </h2>
+                </a>
+            </div>
+            </div>
+            <div class=" imagenextasis col-xs-12 col-md-4">
+                <div class="box imgExtasis">
+                    <a href="">
+                        <img src="{% static 'imagenes/extasisimg.jpg'%}">
+                        <h2>Extasis</h2>
+                    </a>
+                </div>
+            </div>
+            <div class=" imagenlcd col-xs-12 col-md-4">
+                <div class="box imglcd"></div>
+                <a href="">
+                    <img src="{% static 'imagenes/lsdimg.jpg' %}">
+                    <h2>Lsd</h2>
+                </a>
+            </div>
+            </div>
+        </section>
+
+        <section class="row Drogas2" id="Drogas2">
+            <div class=" imagencocaina col-xs-12 col-md-6">
+                <div class="box imgcocaina"></div>
+                <a href="">
+                    <img src="{% static 'imagenes/cocainaimg.png'%}">
+                    <h2> Cocaina </h2>
+                </a>
+            </div>
+            </div>
+            <div class=" imagenhongos col-xs-12 col-md-6">
+                <div class="box imgHongos">
+                    <a href="">
+                        <img src="{% static 'imagenes/hongosimg.jpg'%}">
+                        <h2>Hongos Alucinogenos</h2>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="Grafico">
+            <div id="Graficos">
+                <img src="{% static 'imagenes/grafico.png'%}" alt="" width="100%">
+            </div>
+        </section>
+
+
+
+        <form action="#" method="POST" id="form_id">
+            <h2> Consultas </h2>
+            <div class="contenedor_input">
+                <input type="text" id="nombre" maxlength="30" onblur="revisar(this) ; revisanombre(this)" onkeyup="revisar(this) ; revisanombre(this)" placeholder="*Nombre y Apellido">
+                <input type="text" id="fono" onblur="revisar(this); revisanumero(this)" onkeyup="revisar(this) " placeholder="*Telefono +56 9">
+                <input type="text" id="email" maxlength="60" onblur="revisar(this) ; revisaemail(this)" placeholder="*Email">
+                <textarea class="input" id="mensaje" maxlength="430" onblur="revisar(this)" placeholder="*Escriba aqui su consulta"></textarea>
+                <input type="submit" value="Enviar" id="boton" onclick="validar()">
+            </div>
+        </form>
+
+
+
+
+
+    </main>
+    <br class="borrar">
+    <footer>
+        <div class="piepag" id="social">
+            <p class="copy">Wikidrugs &copy; 2019</p>
+            <div class="sociales">
+                <a class="icon-facebook-official" href="#"></a>
+                <a class="icon-instagram" href="#"></a>
+                <a class="icon-whatsapp" href="#"></a>
+            </div>
+        </div>
+
+
+    </footer>
+
+    <script src="{% static 'js/validarform.js'%}"></script>
+
+
+</body>
+{% endblock %}

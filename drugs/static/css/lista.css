@@ -1,0 +1,72 @@
+.Drogas1 {
+
+    width: 98%;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+    
+    }
+     .Drogas1 img{
+      height: 150px;
+      width: 35%;
+      margin: auto;
+      margin-top:2%
+    }
+    .Drogas1 a {
+        color: #fff;
+        height: 50px;
+        text-decoration: none;
+        
+    }
+    .Drogas1 img:hover {
+      width: 50%;
+      
+    }
+    
+    .Drogas2 {
+    
+      width: 98%;
+      margin: auto;
+      text-align: center;
+      box-sizing: border-box; 
+    }
+    .Drogas2 img {
+      height: 150px;
+      width: 35%;
+      margin: auto;
+      margin-top:2%;
+    }
+    .Drogas2 a {
+      color:#fff;
+      height: 50px;
+      text-decoration: none;
+      
+    }
+    .Drogas2 img:hover {
+      width: 45%;
+      }
+    @media (max-width:480px){
+      .Drogas1{ 
+        width: 100%;
+    
+      }
+      .Drogas1 img {
+        height: 100px;
+        width: 40%;
+      };
+    }
+    
+    @media (max-width:480px){
+      .Drogas2{ 
+        width: 100%;
+    
+      }
+      .Drogas2 img {
+        height: 100px;
+        width: 40%;
+      };
+      
+    }
+    
+    
+    

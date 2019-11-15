@@ -1,0 +1,115 @@
+{% extends "drugs/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<body>
+    <header>
+        <div class="Contenedor">
+            <h1 class="icon-search">Wikidrugs</h1>
+            <input type="Checkbox" id="menu-bar">
+            <label class="icon-th-list" for="menu-bar"></label>
+            <nav class="menu">
+                <a href="#inicio">Marihuana </a>
+                <a href="#efectos">Efectos</a>
+                <a href="#social">Contactos</a>
+                <a href="/">Volver</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="row titulo" id="inicio">
+            <div class=" tituloimagen col-xs-12 col-md-6">
+                <div class="box imagen">
+                    <img src="{% static 'imagenes/imgpagmarihuana/maria1.jpg'%}" alt="" width="100%" height="100%">
+                </div>
+            </div>
+            <div class=" parrafotitulo col-xs-12 col-md-6">
+                <div class="box parrafo">
+                    <h2>Marihuana</h2>
+                    <p>
+                        La marihuana—también conocida como "mota", "hierba", "pasto", "porro", "cacho", "peta" ("pot", "weed", "grass"), es una mezcla de color verde, café o gris de hojas trituradas, tallos, semillas y flores secas del cáñamo—la planta Cannabis sativa. La gente
+                        fuma marihuana en cigarrillos hechos a mano ("bareto" o "joint"); muchos usan pipas, pipas de agua (también conocidas como "bongs") o cigarros de marihuana llamados "caños" (usualmente hechos con cigarros vacíos que se rellenan
+                        en parte o totalmente con marihuana).1 La marihuana también se puede usar para preparar té, y usualmente se mezcla con otros alimentos como bizcochos, galletas o dulces, en particular cuando es vendida o consumida para uso medicinal.
+                        Asimismo, el uso de resinas con un contenido alto en los ingredientes activos de la marihuana, incluyendo el aceite de hachís o "aceite de miel" , un líquido viscoso, la "cera" o "budder" , una sustancia solida con una textura
+                        parecida a la de un bálsamo para labios y el "shatter", una sustancia dura y sólida de color ámbar, se han vuelto aún más populares entre los que usan marihuana para uso recreacional o medicinal.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="row secefectos">
+            <div class="col-xs-12 conefectos">
+                <div class="box efectosmarihuana" id="efectos">
+                    <h2> Efectos</h2>
+                    <p>
+                        Los efectos de la marihuana pueden demorarse un poco si esta se consume en alimentos o bebidas , usualmente entre 30 minutos o 1 hora , porque la droga tienen que pasar primero por el sistema digestivo. Al comer o beber marihuana, se libera mucho menos
+                        THC en el torrente sanguíneo que al fumar una cantidad equivalente de la planta. Como los efectos se toman más tiempo, las personas pueden terminar consumiendo más THC que lo que habían planeado. Por otro lado si esta es fumada
+                        el efecto se tarda entre 10 a 15 minutos.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="row secdosis" id="dosis">
+            <div class="col-xs-12 contentdosis">
+                <div class="box dosis">
+                    <h2> Dosis </h2>
+                    <p>La dosis recomendada es de un gramo (1G) , esta cantidad sera la sufiiente para que el thc haga efecto en el cerebro y tengas un buen viaje de marihuana </p>
+                </div>
+
+            </div>
+
+        </div>
+        <section class="row Marihuana" id="Marihuana">
+            <div class=" imagensativa col-xs-12 col-md-4">
+                <div class="box imgsativa"></div>
+
+                <img src="{% static 'imagenes/marihuanaimg.jpg'%}">
+                <h2> Sativa </h2>
+                <p>La cannabis Sativa produce un efecto de euforia y de mayor interacción que la Indica, la percepción se acentúa disfrutando más los colores y sonidos, estimulando la creatividad y el pensamiento. Se utiliza para el estrés, ansiedad, depresión,
+                    náuseas , migraña y para el aumento de apetito, entre otros beneficios. </p>
+
+            </div>
+            </div>
+            <div class=" imagenindika col-xs-12 col-md-4">
+                <div class="box imgindika">
+
+                    <img src="{% static 'imagenes/extasisimg.jpg'%}">
+                    <h2>Indica</h2>
+                    <p>La Indica produce un efecto muy relajante a nivel físico y mental, a diferencia del estimulante efecto de la Sativa. Es muy efectiva para el insomnio y muy utilizada para tratar temblores, espasmos, dolores permanentes, ansiedad, estrés
+                        y falta de apetito.</p>
+
+                </div>
+            </div>
+
+            <div class=" imagenhibrida col-xs-12 col-md-4">
+                <div class="box imghibrida"></div>
+
+                <img src="{% static 'imagenes/lsdimg.jpg'%}">
+                <h2>Hibrida</h2>
+                <p>En las plantas con dominancia Sativa siempre se manifestarán más los efectos energéticos y sociales, como es el caso de la Kali Mist, que cuenta con un 90% de variedad Sativa. No obstante, el colocón de determinadas variedades como la
+                    Jack Herer, cuentan con unos efectos psicoactivos muy equilibrados, al contar con un fifty-fifty en el ratio Índica/Sativa</p>
+                <br/>
+                <p>Por el lado de las plantas con dominancia Índica ocurre justo lo contrario. En cepas muy Índicas, aunque híbridas, como la Blueberry, con una concentración del 80% de este tipo, es común sentir efectos muy relajantes sacudidos por pequeñas
+                    notas energizantes.</p>
+
+            </div>
+            </div>
+        </section>
+
+
+    </main>
+    <br class="borrar">
+    <footer>
+        <div class="piepag" id="social">
+            <p class="copy">Wikidrugs &copy; 2019</p>
+            <div class="sociales">
+                <a class="icon-facebook-official" href="#"></a>
+                <a class="icon-instagram" href="#"></a>
+                <a class="icon-whatsapp" href="#"></a>
+            </div>
+        </div>
+
+
+    </footer>
+</body>
+{% endblock %}
