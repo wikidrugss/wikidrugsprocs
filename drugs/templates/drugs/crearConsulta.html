@@ -1,0 +1,16 @@
+{% extends "drugs/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<h1>Ingresar consulta</h1>
+<form method="POST" action="{% url 'crearConsulta' %}">
+    {% csrf_token %}
+    <p>Nombre: {{user.get_username}}</p>
+    <p>Email: {{user.get_email}}</p>
+    {{ form }}
+    <input type="submit" value="Crear consulta" />
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>
+<br class="borrar">
+{% endblock %}

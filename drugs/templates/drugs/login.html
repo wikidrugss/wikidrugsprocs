@@ -1,0 +1,15 @@
+{% extends "drugs/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<h1>LOGIN</h1>
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="INGRESAR" />
+    <input type="hidden" name="next" value="{{ next }}" />
+    <a href="{% url 'registrar' %}">Registrarme</a>
+</form>
+<br class="borrar">
+{% endblock %}

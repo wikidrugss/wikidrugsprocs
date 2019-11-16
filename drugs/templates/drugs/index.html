@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block content %}
-<body class="pagprincipal">
+<div class="pagprincipal">
     <header>
         <div class="Contenedor">
             <h1 class="icon-search">Wikidrugs</h1>
@@ -11,6 +11,13 @@
             <nav class="menu">
                 <a href="#Sentido">Drogas</a>
                 <a href="#social">Contactos</a>
+                <a href="{% url 'consultas' %}">Consultas</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">{{user.get_username}}, Salir</a>
+                {% else %}
+                <a href="{% url 'login' %}">Ingresar</a>
+                {% endif %}
+
             </nav>
         </div>
     </header>
@@ -44,7 +51,6 @@
                     <img src="{% static 'imagenes/marihuanaimg.jpg'%}">
                     <h2> Marihuana </h2>
                 </a>
-            </div>
             </div>
             <div class=" imagenextasis col-xs-12 col-md-4">
                 <div class="box imgExtasis">
@@ -89,41 +95,10 @@
                 <img src="{% static 'imagenes/grafico.png'%}" alt="" width="100%">
             </div>
         </section>
-
-
-
-        <form action="#" method="POST" id="form_id">
-            <h2> Consultas </h2>
-            <div class="contenedor_input">
-                <input type="text" id="nombre" maxlength="30" onblur="revisar(this) ; revisanombre(this)" onkeyup="revisar(this) ; revisanombre(this)" placeholder="*Nombre y Apellido">
-                <input type="text" id="fono" onblur="revisar(this); revisanumero(this)" onkeyup="revisar(this) " placeholder="*Telefono +56 9">
-                <input type="text" id="email" maxlength="60" onblur="revisar(this) ; revisaemail(this)" placeholder="*Email">
-                <textarea class="input" id="mensaje" maxlength="430" onblur="revisar(this)" placeholder="*Escriba aqui su consulta"></textarea>
-                <input type="submit" value="Enviar" id="boton" onclick="validar()">
-            </div>
-        </form>
-
-
-
-
-
     </main>
     <br class="borrar">
-    <footer>
-        <div class="piepag" id="social">
-            <p class="copy">Wikidrugs &copy; 2019</p>
-            <div class="sociales">
-                <a class="icon-facebook-official" href="#"></a>
-                <a class="icon-instagram" href="#"></a>
-                <a class="icon-whatsapp" href="#"></a>
-            </div>
-        </div>
-
-
-    </footer>
-
     <script src="{% static 'js/validarform.js'%}"></script>
 
 
-</body>
+</div>
 {% endblock %}

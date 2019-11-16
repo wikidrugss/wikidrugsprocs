@@ -1,0 +1,63 @@
+{% extends "drugs/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="pagprincipal">
+    <header>
+        <div class="Contenedor">
+            <h1 class="icon-search">Wikidrugs</h1>
+            <input type="Checkbox" id="menu-bar">
+            <label class="icon-th-list" for="menu-bar"></label>
+            <nav class="menu">
+                <a href="#Sentido">Drogas</a>
+                <a href="#social">Contactos</a>
+                <a href="{% url 'consultas' %}">Consultas</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">{{user.get_username}}, Salir</a>
+                {% else %}
+                <a href="{% url 'login' %}">Ingresar</a>
+                {% endif %}
+
+            </nav>
+        </div>
+    </header>
+</div>
+<article class="Consultas">
+    <h1>Consultas</h1>
+    
+    {% if user.is_superuser %}
+    <a href="{% url 'consultaResponder' %}">Responder Consultas</a>
+    {% else %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'crearConsulta' %}">Ingresa tu consulta</a>
+        {% else %}
+        <a href="{% url 'login' %}">Iniciar sesion para hacer pregunta</a>
+        {% endif %}
+    {% endif %}
+
+    {% for consulta in Consultas %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="consulta">
+                <div class="col-xs-12">
+                    Consulta: {{ consulta.consulta }}
+                </div>
+                <div class="col-xs-12">
+                    Nombre: {{ consulta.nombre }}
+                </div>
+                <div class="col-xs-12">
+                    Respuesta: {{ consulta.respuesta }}
+                </div>
+                {% if user.is_superuser %}
+                <div class="col-xs-12">
+                    <a href="">Eliminar consulta</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</article>
+<br class="borrar">
+{% endblock %}

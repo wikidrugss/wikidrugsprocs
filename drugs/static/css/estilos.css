@@ -1,21 +1,63 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-@import url('menu.css');
-@import url('carrusel.css');
-@import url('lista.css');
-@import url('form.css');
-@import url('grafico.css');
-@import url('fontello.css');
+form, .consulta { /* SACAR ESTO, ES PARA EJEMPLO */
+    color: #fff;
+}
+
+.Consultas {
+    width: 100%;
+    margin-top: 50px;
+}
+
+
+
+/*-------------------- FUENTES ----------------*/
+@font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.eot?63502507');
+    src: url('../font/fontello.eot?63502507#iefix') format('embedded-opentype'),
+         url('../font/fontello.woff2?63502507') format('woff2'),
+         url('../font/fontello.woff?63502507') format('woff'),
+         url('../font/fontello.ttf?63502507') format('truetype'),
+         url('../font/fontello.svg?63502507#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+   [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+   
+  .icon-th-list:before { content: '\e800'; } /* '' */
+  .icon-search:before { content: '\e801'; } /* '' */
+  .icon-instagram:before { content: '\f16d'; } /* '' */
+  .icon-facebook-official:before { content: '\f230'; } /* '' */
+  .icon-whatsapp:before { content: '\f232'; } /* '' */
+
+/*-------------------- PRINCIPAL ----------------*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.pagprincipal {
+body {
     font-size: 20px;
     background: url(../imagenes/fondo.jpg) top center;
     background-attachment: fixed;
 }
+
 
 header {
     width: 100%;
@@ -79,3 +121,388 @@ footer .piepag {
 .borrar {
     clear: both;
 }
+
+/*-------------------- CARRUSEL ----------------*/
+
+.slider{
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+}
+.slider ul{
+    display: flex;
+    padding: 0;
+    width: 500%;
+    animation: cambio 15s infinite alternate;
+    
+}
+.slider li{
+    width:100%;
+    list-style: none;
+    
+
+}
+.slider img{
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    
+}
+
+@keyframes cambio {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    40%{margin-left: -100%;}
+
+    45%{margin-left: -200%;}
+    60%{margin-left: -200%;}
+
+    65%{margin-left: -300%;}
+    80%{margin-left: -300%;}
+    
+    85%{margin-left: -400%;}
+    100%{margin-left: -400%;}   
+}
+
+/*-------------------- FORM ----------------*/
+
+form {
+    width: 38%;
+    background: rgba(0, 0, 0, 0.2);
+    padding : 10px 20px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    margin-bottom: 50px;
+    float: right;
+    margin-right: 5%;
+    margin-top: 50px;
+  
+}
+form h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: yellowgreen;
+}
+input,textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: 1px solid darkgray;
+}
+input.error , textarea.error {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    background-color: #f78181;
+    border: 1px solid darkgray;
+}
+
+textarea {
+ min-height: 100px;
+ max-height: 200px;
+ max-width: 100%;
+ min-width: 100%;
+}
+#boton {
+    background: yellowgreen;
+    padding: 10px 40px;
+    cursor: pointer;
+    color: #fff;
+}
+#boton:active {
+    transform: scale(1.05);
+}
+@media (max-width:480px) {
+    form {
+        width: 98%;
+        float: left;
+        margin-bottom: 5%;
+        margin-left: 1%;
+        margin-right: 1%;
+       
+    }
+  }
+
+  /*-------------------- GRAFICO ----------------*/
+
+  #Grafico {
+    width: 45%;
+    margin-left: 1%;
+    margin-top: 50px;
+    float: left;
+    
+   
+}
+@media (max-width:480px) {
+    #Grafico {
+        width: 98%;
+        float: left;
+        margin-left: 1%;
+        margin-right: 1%;
+       
+    }
+  }
+
+/*-------------------- LISTA ----------------*/
+
+.Drogas1 {
+
+    width: 98%;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+.Drogas1 img{
+      height: 150px;
+      width: 35%;
+      margin: auto;
+      margin-top:2%
+    }
+    .Drogas1 a {
+        color: #fff;
+        height: 50px;
+        text-decoration: none;
+        
+    }
+    .Drogas1 img:hover {
+      width: 50%;
+      
+    }
+    
+    .Drogas2 {
+    
+      width: 98%;
+      margin: auto;
+      text-align: center;
+      box-sizing: border-box; 
+    }
+    .Drogas2 img {
+      height: 150px;
+      width: 35%;
+      margin: auto;
+      margin-top:2%;
+    }
+    .Drogas2 a {
+      color:#fff;
+      height: 50px;
+      text-decoration: none;
+      
+    }
+    .Drogas2 img:hover {
+      width: 45%;
+      }
+    @media (max-width:480px){
+      .Drogas1{ 
+        width: 100%;
+    
+      }
+      .Drogas1 img {
+        height: 100px;
+        width: 40%;
+      };
+    }
+    
+    @media (max-width:480px){
+      .Drogas2{ 
+        width: 100%;
+    
+      }
+      .Drogas2 img {
+        height: 100px;
+        width: 40%;
+      };
+      
+    }
+
+/*-------------------- INFO-MARIHUANA ----------------*/
+
+    .titulo {
+        margin: 0;
+        margin-top: 50px;
+    }
+    
+    .pagsecundaria {
+        font-size: 20px;
+        background: url(../imagenes/fondo.jpg) top center;
+        background-attachment: fixed;
+    }
+    
+    .titulo .parrafotitulo .parrafo h2 {
+        margin-top: 60px;
+        color: yellowgreen;
+    }
+    
+    h2 {
+        color: yellowgreen;
+    }
+    
+    p {
+        color: #fff;
+    }
+    
+    .tituloimagen img {
+        height: 350px;
+        margin-top: 20px;
+        color: #fff;
+    }
+    
+    .textoparrafotitulo {
+        margin: auto;
+    }
+    
+    .secefectos {
+        margin: auto;
+    }
+    
+    .secefectos .conefectos .efectosmarihuana h2 {
+        text-align: center;
+        color: #9acd32;
+    }
+    
+    .secdosis {
+        margin: auto;
+    }
+    
+    .secdosis .contentdosis .dosis h2 {
+        text-align: center;
+        color: #9acd32;
+    }
+    
+    footer .piepag {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 25px;
+    }
+    
+    .copy {
+        font-size: 20px;
+    }
+    
+    .sociales {
+        text-align: center;
+        font-size: 28px;
+        width: 100%;
+    }
+    
+    .sociales a {
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .borrar {
+        clear: both;
+    }
+    
+    @media (max-width: 480px) {
+        .titulo .parrafotitulo .parrafo h2 {
+            margin-top: 0;
+        }
+        .titulo .parrafotitulo .parrafo p {
+            margin-top: 5px;
+        }
+    }    
+
+/*-------------------- MENU ----------------*/
+
+    #menu-bar {
+        display: none;
+    }
+    
+    header label {
+        float: right;
+        font-size: 28px;
+        margin: 6px 0;
+        cursor: pointer;
+    }
+    
+    .menu {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 67, 9, 0.9);
+        transition: all 0.5s;
+        transform: translateX(-100%)
+    }
+    
+    .menu a {
+        display: block;
+        color: orange;
+        height: 50px;
+        text-decoration: none;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .menu a:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+    
+    #menu-bar:checked~.menu {
+        transform: translateX(0%);
+    }
+    
+    @media (min-width:1024px) {
+        .menu {
+            position: static;
+            width: auto;
+            height: auto;
+            float: right;
+            display: flex;
+            background: yellowgreen;
+        }
+        .menu a {
+            color: #fff;
+        }
+        header label {
+            display: none;
+        }
+    }
+
+/*-------------------- TIPOS-MARIHUANA ----------------*/
+
+    .Marihuana {
+        width: 98%;
+        margin: auto;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    
+    .Marihuana img {
+        height: 150px;
+        width: 35%;
+        margin: auto;
+        margin-top: 2%
+    }
+    
+    .Marihuana a {
+        color: black;
+        height: 50px;
+        text-decoration: none;
+    }
+    
+    .Marihuana a:hover {
+        background: red;
+    }
+    
+    @media (max-width:480px) {
+        .Marihuana {
+            width: 100%;
+        }
+        .Marihuana img {
+            height: 100px;
+            width: 40%;
+        }
+        ;
+    }
