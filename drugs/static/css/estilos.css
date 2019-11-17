@@ -1,4 +1,7 @@
 form,
+
+/*-------------------- CONSULTA ----------------*/
+
 .consulta {
     /* SACAR ESTO, ES PARA EJEMPLO */
     color: #fff;
@@ -7,6 +10,11 @@ form,
 .Consultas {
     width: 100%;
     margin-top: 50px;
+    margin-left: auto;
+}
+
+.registrar {
+    color: yellowgreen;
 }
 
 
@@ -561,4 +569,49 @@ header label {
         width: 40%;
     }
     ;
+}
+
+
+/*-------------------- LOGIN ----------------*/
+
+.form-ingresar {
+    width: 36%;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    margin-bottom: 50px;
+    float: right;
+    margin-right: 32.5%;
+    margin-top: 100px;
+    color: #fff;
+}
+
+.form-ingresar input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: 1px solid darkgray;
+}
+
+.form-ingresar input:hover {
+    cursor: pointer;
+    color: yellowgreen;
+}
+
+.form-ingresar a {
+    text-align: center;
+    color: #fff;
+    margin-left: 40%;
+}
+
+.Consultas {
+    width: 100%;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #fff;
 }

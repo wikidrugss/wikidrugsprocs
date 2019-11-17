@@ -1,14 +1,10 @@
-{% extends "drugs/base.html" %}
-{% load staticfiles %}
+{% extends "drugs/base.html" %} {% load staticfiles %} {% block content %}
 
-{% block content %}
+<h1 class="registrar">Registrarme </h1>
 
-<h1>Registrarme</h1>
 <form method="POST" action="{% url 'registrar' %}">
-    {% csrf_token %}
-    {{ form }}
+    {% csrf_token %} {{ form }}
     <input type="submit" value="REGISTRARME" />
     <input type="hidden" name="next" value="{{ next }}" />
 </form>
-<br class="borrar">
-{% endblock %}
+<br class="borrar"> {% endblock %}
