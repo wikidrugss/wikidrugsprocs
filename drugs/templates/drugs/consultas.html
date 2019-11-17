@@ -18,14 +18,14 @@
     </header>
 </div>
 <article class="Consultas">
-    <h1>Consultas</h1>
+    <h2>Consultas</h2>
 
     {% if user.is_superuser %}
-    <a href="{% url 'consultaResponder' %}">Responder Consultas</a> {% else %} {% if user.is_authenticated %}
-    <a href="{% url 'crearConsulta' %}">Ingresa tu consulta</a> {% else %}
+    <a class="consultaResponder" href="{% url 'consultaResponder' %}">Responder Consultas</a> {% else %} {% if user.is_authenticated %}
+    <a class="crearconsulta" href="{% url 'crearConsulta' %}">Ingresa tu consulta</a> {% else %}
     <a href="{% url 'login' %}">Iniciar sesion para hacer pregunta</a> {% endif %} {% endif %} {% for consulta in Consultas %}
-    <div class=" row">
-        <div class="col-xs-12">
+    <div class=" row Consultasvista">
+        <div class="col-xs-12 consulta-vista">
             <div class="consulta">
                 <div class="consult col-xs-12">
                     Consulta: {{ consulta.consulta }}

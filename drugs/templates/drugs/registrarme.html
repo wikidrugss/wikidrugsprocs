@@ -1,10 +1,26 @@
 {% extends "drugs/base.html" %} {% load staticfiles %} {% block content %}
 
-<h1 class="registrar">Registrarme </h1>
+<header>
+    <div class="Contenedor">
+        <h1 class="icon-search">Wikidrugs</h1>
+        <input type="Checkbox" id="menu-bar">
+        <label class="icon-th-list" for="menu-bar"></label>
+        <nav class="menu">
+            <a href="{% url 'consultas' %}">Consultas</a> {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">{{user.get_username}}, Salir</a> {% else %}
+            <a href="{% url 'login' %}">Ingresar</a> {% endif %}
+            <a href="/">Volver</a>
 
-<form method="POST" action="{% url 'registrar' %}">
-    {% csrf_token %} {{ form }}
-    <input type="submit" value="REGISTRARME" />
-    <input type="hidden" name="next" value="{{ next }}" />
-</form>
+        </nav>
+    </div>
+</header>
+<div class="div-registration">
+    <h2 class="registrar">Registrarme </h2>
+
+    <form class="form-registrarme" method="POST" action="{% url 'registrar' %}">
+        {% csrf_token %} {{ form }}
+        <input type="submit" value="REGISTRARME" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+</div>
 <br class="borrar"> {% endblock %}
