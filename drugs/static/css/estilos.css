@@ -13,6 +13,39 @@ form,
     margin-left: auto;
 }
 
+.Consultas .row {
+    margin-left: 20%;
+    width: 75%;
+}
+
+.consultas a {
+    color: #fff;
+}
+
+.consult {
+    margin-bottom: 10%;
+    margin-top: 30px;
+    background-color: yellowgreen;
+    margin-bottom: 10%;
+    width: 60%;
+    border: 2px solid #fff;
+}
+
+.nombre {
+    margin-bottom: 10%;
+    background-color: yellowgreen;
+    width: 60%;
+    border: 2px solid #fff;
+}
+
+.respuest {
+    margin-bottom: 10%;
+    background-color: yellowgreen;
+    margin-bottom: 10%;
+    width: 60%;
+    border: 2px solid #fff;
+}
+
 .registrar {
     color: yellowgreen;
 }
