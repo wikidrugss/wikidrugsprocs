@@ -9,7 +9,8 @@ urlpatterns = [
     path('consultas/', views.consultas, name='consultas'),
     path('crear-consulta', views.crearConsulta, name="crearConsulta"),
     path('consultas/eliminar/<int:pk>/', views.consultaEliminar, name='consultaEliminar'),
-    path('consulta/responder/', views.consultaResponder, name='consultaResponder'),
+    path('consulta/responder/', views.consultasResponder, name='consultasResponder'),
+    path('consulta/responder/<int:pk>/', views.consultaResponder, name='consultaResponder'),
 
     path('ingresar/', views_auth.LoginView.as_view(template_name='drugs/login.html'), name='login'),
     path('salir/', views_auth.LogoutView.as_view(next_page='index'), name='logout'),

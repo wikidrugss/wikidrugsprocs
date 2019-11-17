@@ -18,12 +18,9 @@
     </header>
 </div>
 <article class="Consultas">
-    <h2>Consultas</h2>
-
-    {% if user.is_superuser %}
-    <a class="consultaResponder" href="{% url 'consultasResponder' %}">Responder Consultas</a> {% else %} {% if user.is_authenticated %}
-    <a class="crearconsulta" href="{% url 'crearConsulta' %}">Ingresa tu consulta</a> {% else %}
-    <a href="{% url 'login' %}">Iniciar sesion para hacer pregunta</a> {% endif %} {% endif %} {% for consulta in Consultas %}
+    <h2>Responder Consultas</h2>
+    {% if Consultas %}
+    {% for consulta in Consultas %}
     <div class=" row Consultasvista">
         <div class="col-xs-12 consulta-vista">
             <div class="consulta">
@@ -34,17 +31,15 @@
                     Nombre: {{ consulta.nombre }}
                 </div>
                 <div class=" respuest col-xs-12">
-                    Respuesta: {{ consulta.respuesta }}
+                    <a href="{% url 'consultaResponder' pk=consulta.pk %}">Responder consulta</a>
                 </div>
-                {% if user.is_superuser %}
-                <div class="col-xs-12">
-                    <a href="{% url 'consultaEliminar' pk=consulta.pk %}">Eliminar consulta</a>
-                </div>
-                {% endif %}
             </div>
         </div>
     </div>
 
     {% endfor %}
+    {% else %}
+    <p>No hay consultas por responder.</p>
+    {% endif %}
 </article>
 <br class="borrar"> {% endblock %}

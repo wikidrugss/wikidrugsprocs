@@ -47,21 +47,27 @@ def registrar(request):
     return render(request = request,
                   template_name = 'drugs/registrarme.html',
                   context={"form":form})
-                
+
+def consultasResponder(request):
+    if not request.user.is_superuser:
+        return redirect('login')
+    Consultas = Consulta.objects.filter(respondida=False)
+    return render(request, 'drugs/responderConsultas.html', {"Consultas":Consultas})
+
 def consultaResponder(request, pk):
     if not request.user.is_authenticated:
         return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
-    pregunta = get_object_or_404(Consulta, pk=pk)
+    consulta = get_object_or_404(Consulta, pk=pk)
     if request.method == "POST":
-        form = responderConsultaForm(request.POST, instance=pregunta)
+        form = responderConsultaForm(request.POST, instance=consulta)
         if form.is_valid():
             consulta = form.save(commit=False)
             consulta.respondida = True
             consulta.save()
-            return redirect('respPreguntas')
+            return redirect('consultas')
     else:
-        form = responderConsultaForm(instance=pregunta)
-    return render(request, 'sol/pregunta_responder.html', {'form':form,'consulta':consulta})
+        form = responderConsultaForm(instance=consulta)
+    return render(request, 'drugs/consulta_responder.html', {'form':form,'consulta':consulta})
 
 def consultaEliminar(request, pk):
     if not request.user.is_superuser:

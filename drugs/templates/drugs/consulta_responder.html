@@ -18,12 +18,8 @@
     </header>
 </div>
 <article class="Consultas">
-    <h2>Consultas</h2>
-
-    {% if user.is_superuser %}
-    <a class="consultaResponder" href="{% url 'consultasResponder' %}">Responder Consultas</a> {% else %} {% if user.is_authenticated %}
-    <a class="crearconsulta" href="{% url 'crearConsulta' %}">Ingresa tu consulta</a> {% else %}
-    <a href="{% url 'login' %}">Iniciar sesion para hacer pregunta</a> {% endif %} {% endif %} {% for consulta in Consultas %}
+    <h2>Responder la consulta</h2>
+    <form method="POST" >{% csrf_token %}
     <div class=" row Consultasvista">
         <div class="col-xs-12 consulta-vista">
             <div class="consulta">
@@ -34,17 +30,14 @@
                     Nombre: {{ consulta.nombre }}
                 </div>
                 <div class=" respuest col-xs-12">
-                    Respuesta: {{ consulta.respuesta }}
+                    {{ form.respuesta}}
                 </div>
-                {% if user.is_superuser %}
-                <div class="col-xs-12">
-                    <a href="{% url 'consultaEliminar' pk=consulta.pk %}">Eliminar consulta</a>
+                <div class="col-xs-12 ">
+                        <input type="submit" value="Enviar Respuesta" />
                 </div>
-                {% endif %}
             </div>
         </div>
     </div>
-
-    {% endfor %}
+    </form>
 </article>
 <br class="borrar"> {% endblock %}
