@@ -18,13 +18,7 @@
     <input type="submit" value="INGRESAR" />
     <input type="hidden" name="next" value="{{ next }}" />
     <a href="{% url 'registrar' %}">Registrarme</a>
+    <a href="/reset/password_reset">¿Olvidaste tu contraseña?</a>
 </form>
-<div class="row">
-    <div class="col-md-6 col-md offset-3">
-        <div class="form-group">
-            <a href="/reset/password_reset">¿Olvidaste tu contraseña?</a>
-            <input class="btn btn-primary" type="submit" name="Ingresar">
-        </div>
-    </div>
-</div>
+
 <br class="borrar"> {% endblock %}
